@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven_Home'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                {
+                    bat 'mvn clean install'
+                }
+            }
+        }
+    }
+}
